@@ -1,10 +1,13 @@
-import styled from "styled-components";
+import { Header } from "../atoms/layout/Header";
+import { Footer } from "../atoms/layout/Footer";
 
 export const DefaultLayout = (props) => {
-    const {} = props;
+    const { children } = props;
     return (
-        <div>
-
-        </div>
+        <>
+            <Header />
+            {children}
+            <Footer />
+        </>
     );
 };

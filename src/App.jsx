@@ -1,9 +1,12 @@
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
 import { PrimaryButton } from './components/atoms/button/PrimaryButton';
 import { SecondaryButton } from './components/atoms/button/SecondaryButton';
 import { SearchInput } from './components/molecules/SearchInput';
 import { UserCard } from './components/organisms/user/UserCard';
 import { HeaderOnly } from './components/templates/HeaderOnly';
+import { Header } from './components/atoms/layout/Header';
+import { DefaultLayout } from './components/templates/DefaultLayout';
 
 const user = {
   name: "山田裕一",
@@ -20,13 +23,20 @@ const user = {
 function App() {
   return (
     <>
-      <HeaderOnly>
-        <PrimaryButton>テスト</PrimaryButton>
-        <SecondaryButton>検索</SecondaryButton>
-        <br />
-        <SearchInput />
-        <UserCard user={user} />
-      </HeaderOnly>
+      <Router>
+        <Routes>
+          <Route path="/" element={
+            <DefaultLayout>
+              <PrimaryButton>テスト</PrimaryButton>
+              <SecondaryButton>検索</SecondaryButton>
+              <br />
+              <SearchInput />
+              <UserCard user={user} />              
+            </DefaultLayout>
+          } />
+          <Route path="/users" element={<Header />} />
+        </Routes>
+      </Router>
     </>
   );
 }
