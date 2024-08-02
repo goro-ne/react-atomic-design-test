@@ -3,6 +3,7 @@ import { PrimaryButton } from './components/atoms/button/PrimaryButton';
 import { SecondaryButton } from './components/atoms/button/SecondaryButton';
 import { SearchInput } from './components/molecules/SearchInput';
 import { UserCard } from './components/organisms/user/UserCard';
+import { HeaderOnly } from './components/templates/HeaderOnly';
 
 const user = {
   name: "山田裕一",
@@ -19,13 +20,13 @@ const user = {
 function App() {
   return (
     <>
-      <div>
+      <HeaderOnly>
         <PrimaryButton>テスト</PrimaryButton>
         <SecondaryButton>検索</SecondaryButton>
         <br />
         <SearchInput />
         <UserCard user={user} />
-      </div>
+      </HeaderOnly>
     </>
   );
 }
