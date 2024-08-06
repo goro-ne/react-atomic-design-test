@@ -1,7 +1,4 @@
 import styled from "styled-components";
-import { HeaderOnly } from "../../components/templates/HeaderOnly";
-import { PrimaryButton } from '../../components/atoms/button/PrimaryButton';
-import { SecondaryButton } from '../../components/atoms/button/SecondaryButton';
 import { SearchInput } from '../../components/molecules/SearchInput';
 import { UserCard } from '../../components/organisms/user/UserCard';
 
@@ -23,22 +20,30 @@ const users = [...Array(10).keys()].map((val) => {
 export const Users = () => {
     return (
         <SContainer>
-            <HeaderOnly>
-                <h2>ユーザー一覧</h2>
-                <PrimaryButton>テスト</PrimaryButton>
-                <SecondaryButton>検索</SecondaryButton>
-                <br />
-                <SearchInput />
+            <h2>ユーザー一覧</h2>
+            <SearchInput />
+            <SUserArea>
                 {users.map((user) => {
                     return (
                         <UserCard key={user.id} user={user} />
                     );
                 })}
-            </HeaderOnly>
+            </SUserArea>
         </SContainer>
     );
 };
 
 const SContainer = styled.div`
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    padding: 24px;
+`;
+
+const SUserArea = styled.div`
+    padding-top: 40px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
 `;
