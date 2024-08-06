@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { DefaultLayout } from "../components/templates/DefaultLayout";
+import { HeaderOnly } from "../components/templates/HeaderOnly";
 import { PrimaryButton } from '../components/atoms/button/PrimaryButton';
 import { SecondaryButton } from '../components/atoms/button/SecondaryButton';
 import { SearchInput } from '../components/molecules/SearchInput';
@@ -34,9 +35,9 @@ export const Router = () => {
                     </DefaultLayout>
                 } />
                 <Route path="/users" element={
-                    <DefaultLayout>
+                    <HeaderOnly>
                         <Users />
-                    </DefaultLayout>
+                    </HeaderOnly>
                 } />
             </Routes>
         </BrowserRouter>
