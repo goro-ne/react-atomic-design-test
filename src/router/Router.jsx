@@ -27,16 +27,16 @@ export const Router = () => {
                 <Route path="/" element={
                     <DefaultLayout>
                         <Top />
-                        <PrimaryButton>テスト</PrimaryButton>
-                        <SecondaryButton>検索</SecondaryButton>
-                        <br />
-                        <SearchInput />
-                        <UserCard user={user} />
                     </DefaultLayout>
                 } />
                 <Route path="/users" element={
                     <HeaderOnly>
                         <Users />
+                        <PrimaryButton>テスト</PrimaryButton>
+                        <SecondaryButton>検索</SecondaryButton>
+                        <br />
+                        <SearchInput />
+                        <UserCard user={user} />
                     </HeaderOnly>
                 } />
             </Routes>
