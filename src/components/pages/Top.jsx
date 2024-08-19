@@ -1,12 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { SecondaryButton } from '../atoms/button/SecondaryButton';
 
 export const Top = () => {
+    const navigate = useNavigate();
     const onClickAdmin = () => {
-        alert('管理');
+        navigate("/users", {state:{isAdmin: true}});
     };
     const onClickGeneral = () => {
-        alert('一般');
+        navigate("/users", {state:{isAdmin: false}});
     };
     return (
         <SContainer>
