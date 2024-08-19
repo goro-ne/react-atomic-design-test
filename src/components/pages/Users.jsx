@@ -23,9 +23,9 @@ export const Users = () => {
             <h2>ユーザー一覧</h2>
             <SearchInput />
             <SUserArea>
-                {users.map((user) => {
+                {users.map((obj) => {
                     return (
-                        <UserCard key={user.id} user={user} />
+                        <UserCard key={obj.id} user={obj} />
                     );
                 })}
             </SUserArea>
